@@ -85,8 +85,7 @@
         },
         "drupal-scaffold": {
             "initial": {
-                ".editorconfig": "../.editorconfig",
-                ".gitattributes": "../.gitattributes"
+                ".editorconfig": "../.editorconfig"
             },
             "excludes": [
                 ".csslintrc",
