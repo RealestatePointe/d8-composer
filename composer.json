@@ -12,6 +12,14 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tmanhollan/realestatepointe.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:tmanhollan/realestatepointe_standard.git"
         }
     ],
     "require": {
@@ -21,6 +29,8 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.0",
         "drush/drush": "^9.0.0",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "tmanhollan/realestatepointe_standard": "dev-master",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
@@ -61,6 +71,7 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
+        "installer-types": ["drupal-custom-profile"],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
