@@ -37,6 +37,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0"
     },
     "require-dev": {
+        "drupal/devel": "^1.2",
         "webflo/drupal-core-require-dev": "^8.6.0"
     },
     "conflict": {
