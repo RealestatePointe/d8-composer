@@ -2,3 +2,6 @@ name: d8-composer
 recipe: drupal8
 config:
   webroot: web
+  php: '7.2'
+  via: nginx
+  database: mariadb
