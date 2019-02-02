@@ -60,6 +60,16 @@ class ScriptHandler {
     }
   }
 
+  public static function setupProject(Event $event) {
+    $fs = new Filesystem();
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $drupalRoot = $drupalFinder->getDrupalRoot();
+    if (!$fs->exists($drupalRoot . '/sites/default/settings.local.php') && $fs->exists($drupalRoot . '/sites/default/default.settings.local.php')) {
+      $fs->copy($drupalRoot . '/sites/default/default.settings.local.php', $drupalRoot . '/sites/default/settings.local.php');
+    }
+  }
+
   /**
    * Checks if the installed version of Composer is compatible.
    *

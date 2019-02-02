@@ -75,7 +75,8 @@
         ],
         "post-create-project-cmd": [
             "@drupal-scaffold",
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::setupProject"
         ],
         "nuke": "rm -r -f web/core web/modules/contrib web/profiles/contrib vendor composer.lock"
     },
