@@ -59,6 +59,7 @@
         "files": ["load.environment.php"]
     },
     "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "pre-install-cmd": [
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
@@ -66,9 +67,14 @@
             "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
         ],
         "post-install-cmd": [
+            "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+        ],
+        "post-create-project-cmd": [
+            "@drupal-scaffold",
             "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
         "nuke": "rm -r -f web/core web/modules/contrib web/profiles/contrib vendor composer.lock"
